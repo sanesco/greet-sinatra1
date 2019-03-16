@@ -12,15 +12,11 @@
 # end
 
 require 'sinatra'
-
 get '/makers/:nombre' do
-   if params[:nombre].nil? || params[:nombre].empty?
-   "<h1>Hola desconocido!</h1>"
-   else
-   "<h1>Hola #{params['nombre']}!</h1>"
-   end
+   @nombre = params['nombre']
+   erb :index
  end
 
- get '/:nombre' do
-   "<h1>Hola #{params[:nombre]}</h1>"
- end
+ # get '/:nombre' do
+ #   "<h1>Hola #{params[:nombre]}</h1>"
+ # end
